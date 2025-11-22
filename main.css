@@ -1025,7 +1025,7 @@ audio#backgroundMusic {
   font-family: 'Courgette', cursive;
   font-size: 2.1rem;
   color: #2d5a3c;
-  margin: 0;
+  margin: 9px;
   line-height: 1.1;
   text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
   word-break: break-word;
@@ -1036,7 +1036,7 @@ audio#backgroundMusic {
 #page6 .coupon-text {
   font-size: 0.9rem;
   line-height: 1.5;
-  margin: 0;
+  margin: 9px;
   font-family: 'Lora', serif;
   color: #4a7b5f;
 }
@@ -1056,7 +1056,7 @@ audio#backgroundMusic {
 #page6 .benefits p {
   font-weight: 500;
   color: #2d5a3c;
-  margin: 0;
+  margin: 9px;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -1101,7 +1101,7 @@ audio#backgroundMusic {
   line-height: 1.4;
   font-family: 'Lora', serif;
   text-align: center;
-  margin-top: 10px;
+  margin: 9px;
 }
 
 /* HIDE SCROLLBARS - Umum untuk semua halaman */
