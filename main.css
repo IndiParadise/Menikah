@@ -1,0 +1,1117 @@
+/* RESET - Umum untuk semua halaman */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive base font size - Umum untuk semua halaman */
+html {
+  font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+
+/* Body - Umum untuk semua halaman */
+body {
+  background-color: #2c5538; /* Background konsisten */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Lora', serif;
+  color: #2c5538;
+  line-height: 1.6;
+}
+
+/* 💍 FIXED MOBILE VIEWPORT (375px) - Container utama */
+.mobile-container {
+  width: 375px;
+  height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #faf9f6; /* Background dasar */
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transform-origin: top left;
+  padding: 0;
+  margin: 0;
+  /* Gaya background akan diterapkan ke masing-masing halaman */
+}
+
+@media (min-width: 376px) {
+  .mobile-container {
+    transform: scale(calc(375 / 100vw));
+    width: 100vw;
+    height: calc(100vw * 812 / 375);
+  }
+}
+
+/* STYLING UMUM UNTUK SEMUA SECTION HALAMAN */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Semua section berada di posisi absolut */
+  top: 0;
+  left: 0;
+  display: none; /* Sembunyikan secara default */
+  overflow: hidden;
+}
+
+.page.active {
+  display: block; /* Tampilkan hanya section yang memiliki class 'active' */
+}
+
+/* STYLING ELEMEN AUDIO (Sembunyikan) */
+audio#backgroundMusic {
+  display: none;
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 1 ==================== */
+/* Gaya background untuk Page 1 */
+#page1 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Animasi untuk leaf di Page 1 */
+#page1 .layer {
+  position: absolute;
+  z-index: 20; /* Atur z-index sesuai kebutuhan */
+  pointer-events: none;
+  opacity: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+#page1 .page1leaf-left-top {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(3);
+  width: 100%;
+  max-width: 300px;
+  animation: shrinkToTopLeft 2s ease-in-out forwards;
+}
+
+#page1 .page1leaf-right-top {
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%) scale(3);
+  width: 100%;
+  max-width: 300px;
+  animation: shrinkToTopRight 2s ease-in-out forwards;
+}
+
+#page1 .page1leaf-right-bottom {
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%) scale(3);
+  width: 100%;
+  max-width: 300px;
+  animation: shrinkToBottomRight 2s ease-in-out forwards;
+}
+
+#page1 .page1leaf-left-bottom {
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%) scale(3);
+  width: 100%;
+  max-width: 300px;
+  animation: shrinkToBottomLeft 2s ease-in-out forwards;
+}
+
+/* Animasi untuk leaf di Page 1 */
+@keyframes shrinkToTopLeft {
+  to {
+    left: -3%;
+    top: -3%;
+    transform: translate(0, 0) scale(1);
+    z-index: 2;
+  }
+}
+
+@keyframes shrinkToTopRight {
+  to {
+    right: -3%;
+    top: -3%;
+    transform: translate(0, 0) scale(1);
+    z-index: 2;
+  }
+}
+
+@keyframes shrinkToBottomRight {
+  to {
+    right: -3%;
+    bottom: -3%;
+    transform: translate(0, 0) scale(1);
+    z-index: 2;
+  }
+}
+
+@keyframes shrinkToBottomLeft {
+  to {
+    left: -3%;
+    bottom: -3%;
+    transform: translate(0, 0) scale(1);
+    z-index: 2;
+  }
+}
+
+/* Container konten utama untuk Page 1 */
+#page1 .page1content {
+  position: relative;
+  top: 10%;
+  z-index: 25;
+  width: 100%;
+  text-align: center;
+  padding: 7% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  min-height: 70%;
+  opacity: 0; /* Mulai transparan */
+  animation: fadeInContent 0.8s ease-out 2s forwards; /* Animasi muncul */
+}
+
+@keyframes fadeInContent {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Gaya untuk judul dan teks di Page 1 */
+#page1 .page1content h1 {
+  font-family: 'Courgette', cursive;
+  font-size:  11vw;
+  color: #2d5a3c;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
+}
+
+#page1 .page1content h2 {
+  font-family: 'Courgette', cursive;
+  font-size: 8vw;
+  color: #2d5a3c;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(45, 90, 60, 0.06);
+}
+
+#page1 .greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  font-family: 'Lora', serif;
+}
+
+#page1 .greeting .salutation {
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0.85;
+  color: #4a7b5f;
+}
+
+#page1 .greeting #visitorName {
+  font-weight: 600;
+  text-align: center;
+  color: #2d5a3c;
+  font-size: 7vw;
+}
+
+/* Gaya untuk tombol "OPEN" di Page 1 */
+#page1 .open-announcement-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: #faf9f6;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 28px;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(45, 90, 60, 0.2);
+  opacity: 0; /* Mulai transparan */
+  animation: fadeInUp 0.8s ease-out 2.8s forwards; /* Animasi muncul */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+#page1 .open-announcement-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 14px rgba(45, 90, 60, 0.25);
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 2 ==================== */
+/* Gaya background untuk Page 2 */
+#page2 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gaya untuk elemen dekoratif di Page 2 */
+#page2 .page2bg-flower {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+  z-index: 5;
+}
+
+#page2 .page2flower-top,
+#page2 .page2flower-bottom {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+#page2 .page2flower-top {
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+#page2 .page2flower-bottom {
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+/* Container konten utama untuk Page 2 */
+#page2 .page2content {
+  position: relative;
+  top: 75px;
+  z-index: 20;
+  width: 100%;
+  text-align: center;
+  padding: 6% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 75%;
+}
+
+/* Gaya untuk tab di Page 2 */
+#page2 .tabs {
+  display: flex;
+  max-width: 70%;
+  justify-content: center;
+  position: absolute; /* Absolute untuk posisi di atas konten */
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  gap: 10px;
+  flex-direction: row;
+}
+
+#page2 .tab-btn {
+  background: #e8e6e1;
+  color: #4a7b5f;
+  border: 1px solid #d1cec6;
+  padding: 0.7rem ;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  max-width: 150px;
+  color: #4a7b5f !important;
+  opacity: 1 !important;
+  z-index: 1001;
+  font-size: 1.1rem;
+}
+
+#page2 .tab-btn.active {
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: #faf9f6 !important;
+  border-color: #2d5a3c;
+  box-shadow: 0 4px 12px rgba(45, 90, 60, 0.2);
+}
+
+#page2 .tab-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Gaya untuk konten tab di Page 2 */
+#page2 .tab-content {
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 5px; /* Atur posisi vertikal konten tab */
+  left: 0;
+  padding: 0;
+  max-height: 1500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s ease;
+  overflow: hidden;
+  padding: 0 10px;
+  z-index: 25;
+}
+
+#page2 .tab-content.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 30;
+}
+
+/* Gaya untuk kotak info di Page 2 */
+#page2 .info-box {
+  background: rgba(255, 255, 255, 0.98);
+  background-image:url('Assets/flowerPage3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(45, 90, 60, 0.15);
+  border-radius: 20px;
+  padding: 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 7px;
+  max-height: 500px;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 90%;
+  position: relative;
+  z-index: 35;
+}
+
+#page2 .info-box h3 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.8rem;
+  color: #2d5a3c;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+}
+
+#page2 .info-box h4 {
+  font-family: 'Courgette', cursive;
+  font-size: 1.7rem;
+  color: #2d5a3c;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+}
+
+#page2 #hari{
+  font-size: 1.2rem;
+}
+
+#page2 .parent-line {
+  font-size: 0.8rem;
+  color: #4a7b5f;
+  margin: 3px 0;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+}
+
+#page2 .amp {
+  font-family: 'Courgette', cursive;
+  font-size: 2rem;
+  color: #2d5a3c;
+  margin: 3px 0;
+  display: block;
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+}
+
+/* Gaya untuk tombol navigasi di Page 2 */
+#page2 .open-announcement-btn {
+  position: relative;
+  top: 10%; /* Atur posisi vertikal tombol */
+  right:-37%;
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: #faf9f6;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 90, 60, 0.2);
+  opacity: 1 !important;
+}
+
+#page2 .open-announcement-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(45, 90, 60, 0.25);
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 3 ==================== */
+/* Gaya background untuk Page 3 */
+#page3 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gaya untuk elemen dekoratif di Page 3 */
+#page3 .page3flower-top,#page3 .page3flower-top2,
+#page3 .page3flower-bottom {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+}
+
+#page3 .page3flower-top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+  opacity: 0.3;
+}
+#page2 .page3flower-top2{
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+}
+#page3 .page3flower-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Container konten utama untuk Page 3 */
+#page3 .page3content {
+  position: relative;
+  top: 18%;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding: 5% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 60%;
+}
+
+/* Gaya untuk judul di Page 3 */
+#page3 .title {
+  font-family: 'Courgette', cursive;
+  font-size: 12vw;
+  color: #2d5a3c;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
+  word-break: break-word;
+}
+
+/* Gaya untuk kotak hadiah di Page 3 */
+#page3 .gift-box {
+  width: 100%;
+  height: 90%;
+  padding: 10px 10px;
+  background: rgba(250, 249, 246, 0.95);
+  border: 1px solid rgba(45, 90, 60, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 0; /* Mulai transparan untuk animasi */
+  transition: all 0.6s ease;
+  position: relative;
+  z-index: 20;
+}
+
+#page3 .gift-box p {
+  font-size: 0.8rem;
+  color: #4a7b5f;
+  line-height: 1.3;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+#page3 .gift-box strong {
+  color: #2d5a3c;
+  font-weight: 600;
+}
+
+/* Animasi untuk kotak hadiah di Page 3 */
+#page3 .slide-in-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+#page3 .slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#page3 .slide-in-left.active,
+#page3 .slide-in-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Gaya untuk tombol navigasi di Page 3 */
+#page3 .open-announcement-btn {
+  position: relative;
+  bottom: -23%;
+  right: -35%;
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: #faf9f6;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 90, 60, 0.2);
+}
+
+#page3 .open-announcement-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(45, 90, 60, 0.25);
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 4 ==================== */
+/* Gaya background untuk Page 4 */
+#page4 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gaya untuk elemen dekoratif di Page 4 */
+#page4 .page4leaf-top-left,
+#page4 .page4leaf-bottom-right {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+}
+
+#page4 .page4leaf-top-left {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+#page4 .page4leaf-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+/* Container konten utama untuk Page 4 */
+#page4 .page4content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding: 5% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100%;
+}
+
+/* Gaya untuk judul di Page 4 */
+#page4 .title {
+  font-family: 'Courgette', cursive;
+  font-size: 12.5vw;
+  color: #2d5a3c;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
+  word-break: break-word;
+  padding: 10px 0;
+}
+
+/* Gaya untuk kotak puisi di Page 4 */
+#page4 .pantun-box {
+  width: 100%;
+  height: 70%;
+  padding: 20px;
+  background: rgba(250, 249, 246, 0.95);
+  border: 1px solid rgba(45, 90, 60, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 0; /* Mulai transparan untuk animasi */
+  transition: all 0.6s ease;
+  position: relative;
+  z-index: 20;
+}
+
+#page4 .pantun-box p {
+  font-size: 4.6vw;
+  color: #4a7b5f;
+  line-height: 1.6;
+  margin: 8px 0;
+  word-wrap: break-word;
+}
+
+/* Animasi untuk kotak puisi di Page 4 */
+#page4 .slide-in-up {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+#page4 .slide-in-up.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Gaya untuk tombol navigasi di Page 4 */
+#page4 .open-announcement-btn {
+  position: relative;
+  top: -18%;
+  right: -39%;
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: #faf9f6;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 90, 60, 0.2);
+}
+
+#page4 .open-announcement-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(45, 90, 60, 0.25);
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 5 ==================== */
+/* Gaya background untuk Page 5 */
+#page5 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gaya untuk elemen dekoratif di Page 5 */
+#page5 .page5leaf-top-right,
+#page5 .page5leaf-bottom-left {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+}
+
+#page5 .page5leaf-top-right {
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+#page5 .page5leaf-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+/* Container konten utama untuk Page 5 */
+#page5 .page5content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding: 5% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100%;
+}
+
+/* Gaya untuk judul di Page 5 */
+#page5 .title {
+  font-family: 'Courgette', cursive;
+  font-size: 11vw;
+  color: #2d5a3c;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
+  word-break: break-word;
+  padding: 10px 0;
+}
+
+/* Gaya untuk subtitle di Page 5 */
+#page5 .subtitle {
+  font-family: 'Lora', serif;
+  color: #4a7b5f;
+  margin: 0;
+  font-size: 5vw;
+  line-height: 0.4;
+}
+
+/* Gaya untuk daftar kata di Page 5 */
+#page5 .words-to-find {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  margin: 0;
+  width: 100%;
+}
+
+#page5 .word-item {
+  background: #e8f5e9;
+  padding: 6px;
+  border: 2px solid #c8e6c9;
+  border-radius: 20px;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  color: #2e7d32;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+#page5 .word-item.found {
+  background: #a5d6a7;
+  border-color: #4caf50;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* Gaya untuk grid puzzle di Page 5 */
+#page5 #puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  margin: 0;
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+}
+
+#page5 .cell {
+  aspect-ratio: 1;
+  background: #f0f8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #2d5a3c;
+  border: 2px solid #d3e5d5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#page5 .cell:hover {
+  transform: scale(1.05);
+  background-color: #e0f0e0;
+  border-color: #b0d0b0;
+}
+
+#page5 .cell.highlighted {
+  background-color: #a5d6a7;
+  border-color: #4caf50;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+#page5 .cell.selected {
+  background-color: #bbdefb;
+  border-color: #2196f3;
+  color: #0d47a1;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+}
+
+/* Gaya untuk pesan penyelesaian di Page 5 */
+#page5 #completion-message {
+  background: rgba(250, 249, 246, 0.95);
+  padding: 20px;
+  border: 1px solid rgba(45, 90, 60, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  animation: fadeIn 0.5s ease-in;
+  font-family: 'Lora', serif;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  height: 70%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#page5 .completion-title {
+  color: #2d5a3c;
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-family: 'Courgette', cursive;
+}
+
+#page5 .completion-text {
+  color: #4a7b5f;
+  margin: 0 0 18px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Gaya untuk tombol klaim di Page 5 */
+#page5 #claim-button {
+  position: relative;
+  top: 0%;
+  background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 28px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(45, 90, 60, 0.2);
+  margin-top: 10px;
+}
+
+#page5 #claim-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(45, 90, 60, 0.25);
+}
+
+#page5 .hidden {
+  display: none;
+}
+
+/* ==================== STYLING KHUSUS UNTUK PAGE 6 ==================== */
+/* Gaya background untuk Page 6 */
+#page6 {
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gaya untuk elemen dekoratif di Page 6 */
+#page6 .page6leaf-top-left,
+#page6 .page6leaf-bottom-right {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+}
+
+#page6 .page6leaf-top-left {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+#page6 .page6leaf-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+/* Container konten utama untuk Page 6 */
+#page6 .page6content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  padding: 5% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100%;
+}
+
+/* Gaya untuk judul di Page 6 */
+#page6 .title {
+  font-family: 'Courgette', cursive;
+  font-size: 2.1rem;
+  color: #2d5a3c;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(45, 90, 60, 0.08);
+  word-break: break-word;
+  padding: 10px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Gaya untuk teks kupon di Page 6 */
+#page6 .coupon-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'Lora', serif;
+  color: #4a7b5f;
+  padding: 0 10px;
+}
+
+/* Gaya untuk kotak manfaat di Page 6 */
+#page6 .benefits {
+  background: rgba(250, 249, 246, 0.95);
+  padding: 18px;
+  border: 1px solid rgba(45, 90, 60, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#page6 .benefits p {
+  font-weight: 500;
+  color: #2d5a3c;
+  margin: 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Lora', serif;
+}
+
+/* Gaya untuk kondisi di Page 6 */
+#page6 .condition {
+  background: rgba(250, 249, 246, 0.95);
+  padding: 15px;
+  border: 1px solid rgba(45, 90, 60, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  font-weight: 500;
+  color: #2d5a3c;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-family: 'Lora', serif;
+}
+
+#page6 .date {
+  display: block;
+  font-size: 1.1rem;
+  color: #2d5a3c;
+  margin-top: 8px;
+  font-weight: 600;
+  font-family: 'Lora', serif;
+}
+
+/* Gaya untuk credit di Page 6 */
+#page6 .credits {
+  position: relative;
+  bottom: 40px;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(45, 90, 60, 0.1);
+  width: 100%;
+  max-width: 300px;
+  font-size: 0.8rem;
+  color: #6b8e75;
+  line-height: 1.4;
+  font-family: 'Lora', serif;
+  text-align: center;
+}
+
+/* HIDE SCROLLBARS - Umum untuk semua halaman */
+body::-webkit-scrollbar { display: none; }
+body { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* SAFE AREA - Umum untuk semua halaman */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .mobile-container {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

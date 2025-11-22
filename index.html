@@ -5,22 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wedding Announcement • Indi & Salman</title>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="page1.css" />
+  <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
   <div class="mobile-container">
     <section class="page active" id="page1">
-      <!-- NEW: Background elements container -->
-      <div class="background-elements">
-        <!-- Example small flower placements with direct animation-delay -->
-        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 0s;">
-        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 1s;">
-        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 2s;">
-        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 3s;">
-      </div>
-
-      <!-- Content starts hidden behind large leaves -->
-      <div class="content">
+    <!-- elements -->
+     <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page1leaf-left-top">
+     <img src="Assets/leafRightTopPage1.png" alt="" class="layer page1leaf-right-top">
+     <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page1leaf-right-bottom">
+     <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer page1leaf-left-bottom">
+     <div class="page1content">
         <h1>WEDDING<br>ANNOUNCEMENT</h1>
         <h2>IDAMAN<br>(INDI & SALMAN)</h2>
         <div class="greeting">
@@ -29,88 +24,133 @@
         </div>
       </div>
 
-      <!-- 4 Leaves start large and shrink to their positions -->
-      <img src="Assets/leafLeftTopPage1.png" alt="" class="layer leaf-left-top">
-      <img src="Assets/leafRightTopPage1.png" alt="" class="layer leaf-right-top">
-      <img src="Assets/leafRightBottomPage1.png" alt="" class="layer leaf-right-bottom">
-      <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer leaf-left-bottom">
+    <!-- Navigation Button -->
+     <button class="open-announcement-btn" id="openBtn" onclick="goToPage(2)">OPEN</button> <!-- Tambahkan ID -->
+    </section>
+    <section class="page active" id="page2">
+      <!-- elements -->
+      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 10%; left: 10%;"> <!-- Batch 6, Image 26 -->
+      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 80%; right: 15%;"> <!-- Batch 7, Image 32 -->
+      <img src="Assets/flowerTopPage2.png" alt="" class="layer page2flower-top">
+      <img src="Assets/flowerBottomPage2.png" alt="" class="layer page2flower-bottom">
 
-      <!-- Navigation Button -->
-      <button class="open-announcement-btn" id="openBtn">OPEN</button> <!-- Tambahkan ID -->
+      <div class="page2content">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="bride-groom">Bride & Groom</button>
+            <button class="tab-btn" data-tab="akad">Wedding Vow</button>
+        </div>
+        <div class="tab-content active" id="bride-groom">
+            <div class="info-box">
+                <h3>INDI PARADISE</h3>
+                <p class="parent-line">Second Daughter of Mr. Akhmad Kasun</p>
+                <p class="parent-line">& Mrs. Mariyam</p>
+                <span class="amp">&</span>
+                <h3>SALMAN ZAKARIA</h3>
+                <p class="parent-line">Second Son of Mr. Jubaedi Adnan</p>
+                <p class="parent-line">& Mrs. Laswati</p>
+            </div>
+        </div>
+        <div class="tab-content" id="akad">
+            <div class="info-box ">
+                <p id="hari">Tuesday</p>
+                <h3>25.11.25</h3>
+                <p id="hari">09.00 AM </p>
+                <p id="hari">Jalan Jangkang No.63 RT 13 RW 02, Leran, Manyar, Gresik</p>
+            </div>
+        </div>
+    </div>
+    <button class="open-announcement-btn" onclick="goToPage(3)" style="display: block !important; opacity: 1 !important; z-index: 999 !important;">GIFT</button>  
+    </section>
+    <section class="page active" id="page3">
+        <img src="Assets/flowersideLeftPage3.png" alt="" class="layer page3flower-top">
+        <img src="Assets/flowersideRightPage3.png" alt="" class="layer page3flower-bottom">
+        <img src="Assets/flowerTopPage3.png" alt="" class="layer page3flower-top2" >
+        <div class="page3content">
+            <h1 class="title">WEDDING<br>GIFT</h1>
+            <div class="gift-box slide-in-left" id="giftBox1">
+                <p>Merupakan suatu <strong>kehormatan dan kebahagiaan</strong> jika anda berkenan memberikan doa restu kepada kami.</p>
+            </div>
+            <div class="gift-box slide-in-right" id="giftBox2">
+                <p>Namun jika memberi adalah <strong>ungkapan tanda kasih anda</strong>, kami akan semakin berbahagia dan bersyukur, bilamana rekan-rekan semua turut berkenan memberikan donasi kepada yayasan-yayasan sosial yang fokus pada <strong>pembangunan masyarakat.</strong></p>
+            </div>
+        </div>
+        <button class="open-announcement-btn" onclick="goToPage(4)">POETRY</button>
+    </section>
+    <section class="page active" id="page4">
+      <!-- Large background leaves -->
+      <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page4leaf-top-left">
+      <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page4leaf-bottom-right">
+
+      <div class="page4content">
+        <h1 class="title">IDAMAN</h1>
+
+        <!-- Pantun Content Box -->
+        <div class="pantun-box slide-in-up" id="pantunBox">
+          <p>Isinya Indi dan Salman</p>
+          <p>Semoga menjadi keberkahan</p>
+          <p>Mampu melewati ujian</p>
+          <p>Demi wujudkan harapan</p>
+          <p>Bekerja sama di jalan perjuangan</p>
+          <p>Menerapkan nilai keseimbangan</p>
+        </div>
+    </div>
+        <button class="open-announcement-btn" onclick="goToPage(5)">GAME</button>
+      
+    </section>
+    <section class="page active" id="page5">
+      <!-- Large background leaves -->
+      <img src="Assets/leafRightTopPage1.png" alt="" class="layer page5leaf-top-right">
+      <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer page5leaf-bottom-left">
+
+      <div class="page5content">
+        <h1 class="title">PUZZLE<br>WORDS</h1>
+        <p class="subtitle">find our special words</p>
+
+        <div class="words-to-find" id="words-to-find">
+          <span class="word-item">INDI</span>
+          <span class="word-item">SALMAN</span>
+          <span class="word-item">KELUARGA</span>
+          <span class="word-item">PEJUANG</span>
+          <span class="word-item">PMT</span>
+        </div>
+
+        <div id="puzzle-grid"></div>
+
+        <div id="completion-message" class="hidden">
+          <h2 class="completion-title">Congratulation 🎉</h2>
+          <p class="completion-text">you found all of our special words</p>
+          <button id="claim-button">CLAIM CUPON</button>
+        </div>
+        
+      </div>
+    </section>
+    <section class="page active" id="page6">
+      <!-- Large background leaves -->
+      <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page6leaf-top-left">
+      <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page6leaf-bottom-right">
+
+      <div class="page6content">
+        <h1 class="title">CUPON</h1>
+
+        <div class="coupon-content">
+          <p class="coupon-text">Silakan tukarkan kupon ini dengan paket bingkisan kepada pengurus SM di sekretariat.</p>
+          <p class="condition">
+            <b>Hanya berlaku</b> jika Anda mengikuti <b>SM</b> pada:<br>
+            <span class="date">29/30 November 2025 di Sekretariat </span>
+          </p>
+        </div>
+
+        <div class="credits">
+          <p>Content & Supervision: Salman</p>
+          <p>Design & Coding: Indi</p>
+        </div>
+      </div>
     </section>
   </div>
-
-  <!-- NEW: Audio Element -->
-  <audio id="backgroundMusic" loop>
+   <audio id="backgroundMusic" loop>
     <source src="Assets/weddingSong.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
-  <script>
-    // --- Fungsi untuk memutar musik ---
-    function playMusic() {
-      const audio = document.getElementById('backgroundMusic');
-      audio.play()
-        .then(() => {
-          console.log("Audio playback started successfully.");
-        })
-        .catch((error) => {
-          console.log("Audio playback failed:", error);
-          // Mungkin tampilkan pesan ke pengguna bahwa musik tidak bisa diputar
-        });
-    }
-
-    // --- Fungsi navigasi asli ---
-    function goToPage(pageNumber) {
-      // Buat overlay secara dinamis dengan warna background container
-      const overlay = document.createElement('div');
-      overlay.style.position = 'fixed';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
-      overlay.style.width = '100%';
-      overlay.style.height = '100%';
-      overlay.style.background = '#faf9f6'; // Warna sama dengan background container
-      overlay.style.zIndex = '9999';
-      overlay.style.opacity = '0';
-      overlay.style.transition = 'opacity 2s ease-out';
-      overlay.style.webkitTransition = 'opacity 2s ease-out';
-
-      document.body.appendChild(overlay);
-
-      // Force reflow dan mulai animasi
-      setTimeout(() => {
-        overlay.style.opacity = '1';
-      }, 10);
-
-      // Pindah halaman setelah animasi selesai
-      setTimeout(() => {
-        window.location.href = `page${pageNumber}.html`;
-      }, 2000);
-    }
-
-    // --- Script untuk menangani nama tamu dan event listener tombol ---
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Tangani nama tamu
-      const urlParams = new URLSearchParams(window.location.search);
-      const name = decodeURIComponent(urlParams.get('name') || 'Sahabat yang Dirahmati');
-      const visitorNameElement = document.getElementById('visitorName');
-      if (visitorNameElement) {
-        visitorNameElement.textContent = name;
-      }
-
-      // 2. Tambahkan event listener ke tombol OPEN (setelah DOM selesai dimuat)
-      const openBtn = document.getElementById('openBtn');
-      if (openBtn) {
-        openBtn.addEventListener('click', function(event) {
-            // 3. Coba putar musik saat tombol diklik
-            playMusic();
-            // 4. Biarkan fungsi goToPage berjalan seperti biasa
-            goToPage(2); // Atau nomor halaman tujuan
-        });
-      } else {
-        console.error("Element #openBtn not found!");
-      }
-    });
-  </script>
-</body>
-</html>
+  <script src="main.js"></script>
+  </body>
+  </html>

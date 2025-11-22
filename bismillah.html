@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Announcement • Indi & Salman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="page1.css" />
+</head>
+<body>
+  <div class="mobile-container">
+    <section class="page active" id="page1">
+      <!-- NEW: Background elements container -->
+      <div class="background-elements">
+        <!-- Example small flower placements with direct animation-delay -->
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 0s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 1s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 2s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 3s;">
+      </div>
+
+      <!-- Content starts hidden behind large leaves -->
+      <div class="content">
+        <h1>WEDDING<br>ANNOUNCEMENT</h1>
+        <h2>IDAMAN<br>(INDI & SALMAN)</h2>
+        <div class="greeting">
+          <span class="salutation">Yth.</span>
+          <span id="visitorName">Sahabat yang Dirahmati</span> <!-- Nilai default sementara -->
+        </div>
+      </div>
+
+      <!-- 4 Leaves start large and shrink to their positions -->
+      <img src="Assets/leafLeftTopPage1.png" alt="" class="layer leaf-left-top">
+      <img src="Assets/leafRightTopPage1.png" alt="" class="layer leaf-right-top">
+      <img src="Assets/leafRightBottomPage1.png" alt="" class="layer leaf-right-bottom">
+      <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer leaf-left-bottom">
+
+      <!-- Navigation Button -->
+      <button class="open-announcement-btn" id="openBtn">OPEN</button> <!-- Tambahkan ID -->
+    </section>
+  </div>
+
+  <!-- NEW: Audio Element -->
+  <audio id="backgroundMusic" loop>
+    <source src="Assets/weddingSong.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // --- Fungsi untuk memutar musik ---
+    function playMusic() {
+      const audio = document.getElementById('backgroundMusic');
+      audio.play()
+        .then(() => {
+          console.log("Audio playback started successfully.");
+        })
+        .catch((error) => {
+          console.log("Audio playback failed:", error);
+          // Mungkin tampilkan pesan ke pengguna bahwa musik tidak bisa diputar
+        });
+    }
+
+    // --- Fungsi navigasi asli ---
+    function goToPage(pageNumber) {
+      // Buat overlay secara dinamis dengan warna background container
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = '#faf9f6'; // Warna sama dengan background container
+      overlay.style.zIndex = '9999';
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity 2s ease-out';
+      overlay.style.webkitTransition = 'opacity 2s ease-out';
+
+      document.body.appendChild(overlay);
+
+      // Force reflow dan mulai animasi
+      setTimeout(() => {
+        overlay.style.opacity = '1';
+      }, 10);
+
+      // Pindah halaman setelah animasi selesai
+      setTimeout(() => {
+        window.location.href = `page${pageNumber}.html`;
+      }, 2000);
+    }
+
+    // --- Script untuk menangani nama tamu dan event listener tombol ---
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tangani nama tamu
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = decodeURIComponent(urlParams.get('name') || 'Sahabat yang Dirahmati');
+      const visitorNameElement = document.getElementById('visitorName');
+      if (visitorNameElement) {
+        visitorNameElement.textContent = name;
+      }
+
+      // 2. Tambahkan event listener ke tombol OPEN (setelah DOM selesai dimuat)
+      const openBtn = document.getElementById('openBtn');
+      if (openBtn) {
+        openBtn.addEventListener('click', function(event) {
+            // 3. Coba putar musik saat tombol diklik
+            playMusic();
+            // 4. Biarkan fungsi goToPage berjalan seperti biasa
+            goToPage(2); // Atau nomor halaman tujuan
+        });
+      } else {
+        console.error("Element #openBtn not found!");
+      }
+    });
+  </script>
+</body>
+</html>
