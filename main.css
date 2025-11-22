@@ -1091,13 +1091,11 @@ audio#backgroundMusic {
 /* Gaya untuk credit di Page 6 */
 #page6 .credits {
   background-color: #e8f5e9;
-  position: relative;
-  bottom: 30px;
   border-top: 1px dashed rgba(45, 90, 60, 0.1);
   width: 100%;
   max-width: 300px;
   font-size: 0.8rem;
-  color: #6b8e75;
+  color: #164b25;
   line-height: 1.4;
   font-family: 'Lora', serif;
   text-align: center;
