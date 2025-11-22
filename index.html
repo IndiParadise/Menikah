@@ -10,7 +10,14 @@
 <body>
   <div class="mobile-container">
     <section class="page active" id="page1">
-      <!-- ... (other content like background elements, leaves, greeting) ... -->
+      <!-- NEW: Background elements container -->
+      <div class="background-elements">
+        <!-- Example small flower placements with direct animation-delay -->
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 0s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 1s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 2s;">
+        <img src="Assets/flowerPage3.png" alt="Small Flower" class="bg-flower" style="animation-delay: 3s;">
+      </div>
 
       <!-- Content starts hidden behind large leaves -->
       <div class="content">
@@ -18,7 +25,7 @@
         <h2>IDAMAN<br>(INDI & SALMAN)</h2>
         <div class="greeting">
           <span class="salutation">Yth.</span>
-          <span id="visitorName">Sahabat yang Dirahmati</span>
+          <span id="visitorName">Sahabat yang Dirahmati</span> <!-- Nilai default sementara -->
         </div>
       </div>
 
@@ -29,7 +36,7 @@
       <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer leaf-left-bottom">
 
       <!-- Navigation Button -->
-      <button class="open-announcement-btn" onclick="goToPage(2)">OPEN</button> <!-- Add an ID for easy selection -->
+      <button class="open-announcement-btn" id="openBtn">OPEN</button> <!-- Tambahkan ID -->
     </section>
   </div>
 
@@ -40,9 +47,7 @@
   </audio>
 
   <script>
-    // ... (existing script for goToPage and visitor name) ...
-
-    // NEW: Function to play music after user interaction
+    // --- Fungsi untuk memutar musik ---
     function playMusic() {
       const audio = document.getElementById('backgroundMusic');
       audio.play()
@@ -55,14 +60,7 @@
         });
     }
 
-    // NEW: Attach event listener to the OPEN button
-    document.getElementById('openBtn').addEventListener('click', function(event) {
-        // Attempt to play the music when the button is clicked
-        playMusic();
-        // Allow the default goToPage function to run (or the navigation logic)
-        // If goToPage uses window.location.href, it will navigate after this function runs.
-    });
-
+    // --- Fungsi navigasi asli ---
     function goToPage(pageNumber) {
       // Buat overlay secara dinamis dengan warna background container
       const overlay = document.createElement('div');
@@ -90,10 +88,28 @@
       }, 2000);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    // --- Script untuk menangani nama tamu dan event listener tombol ---
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tangani nama tamu
       const urlParams = new URLSearchParams(window.location.search);
       const name = decodeURIComponent(urlParams.get('name') || 'Sahabat yang Dirahmati');
-      document.getElementById('visitorName').textContent = name;
+      const visitorNameElement = document.getElementById('visitorName');
+      if (visitorNameElement) {
+        visitorNameElement.textContent = name;
+      }
+
+      // 2. Tambahkan event listener ke tombol OPEN (setelah DOM selesai dimuat)
+      const openBtn = document.getElementById('openBtn');
+      if (openBtn) {
+        openBtn.addEventListener('click', function(event) {
+            // 3. Coba putar musik saat tombol diklik
+            playMusic();
+            // 4. Biarkan fungsi goToPage berjalan seperti biasa
+            goToPage(2); // Atau nomor halaman tujuan
+        });
+      } else {
+        console.error("Element #openBtn not found!");
+      }
     });
   </script>
 </body>
