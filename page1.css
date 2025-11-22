@@ -238,7 +238,7 @@ body {
 /* BUTTON – ELEGAN DENGAN GRADIEN */
 .open-announcement-btn {
   position: absolute;
-  bottom: 35px;
+  bottom: 75px;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
   background: linear-gradient(135deg, #2d5a3c, #4a7b5f);

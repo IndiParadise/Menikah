@@ -60,6 +60,10 @@ body {
   transform-origin: top left;
   padding: 0;
   margin: 0;
+  background-image: url('Assets/backgroundTexture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* DESKTOP: SAMA PERSIS DENGAN MOBILE */
@@ -103,7 +107,7 @@ body {
 /* TITLE */
 .title {
   font-family: 'Courgette', cursive;
-  font-size: 2.2rem;
+  font-size: 12.5vw;
   color: #2d5a3c;
   margin: 0;
   line-height: 1.1;
@@ -129,7 +133,7 @@ body {
 }
 
 .pantun-box p {
-  font-size: 0.8rem;
+  font-size: 8vw;
   color: #4a7b5f;
   line-height: 1.6;
   margin: 8px 0;
