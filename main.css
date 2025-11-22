@@ -227,7 +227,7 @@ audio#backgroundMusic {
 /* Gaya untuk tombol "OPEN" di Page 1 */
 #page1 .open-announcement-btn {
   position: absolute;
-  bottom: 20%;
+  bottom: 28%;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
   background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
@@ -474,7 +474,7 @@ audio#backgroundMusic {
 /* Gaya untuk tombol navigasi di Page 2 */
 #page2 .open-announcement-btn {
   position: relative;
-  bottom:20%;
+  bottom:10%;
   right:-37%;
   background: linear-gradient(135deg, #2d5a3c, #4a7b5f);
   color: #faf9f6;
