@@ -319,7 +319,9 @@ body {
   z-index: 2;
   opacity: 1 !important;
 }
-
+.hari{
+  font-size: 1rem;
+}
 .parent-line {
   font-size: 1rem;
   color: #4a7b5f;
