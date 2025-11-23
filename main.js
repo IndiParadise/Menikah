@@ -12,7 +12,6 @@ function goToPage(pageNumber) {
     3: 'page3',
     4: 'page4',
     5: 'page5',
-    6: 'page6'
   };
   const targetPageId = pageMap[pageNumber];
 
@@ -158,27 +157,6 @@ function createPageElement(pageId) {
           <div id="completion-message" class="hidden">
             <h2 class="completion-title">Congratulation 🎉</h2>
             <p class="completion-text">you found all of our special words</p>
-            <button id="claim-button">CLAIM COUPON</button>
-          </div>
-        </div>
-      `;
-      break;
-
-    case 'page6':
-      page.innerHTML = `
-        <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page6leaf-top-left">
-        <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page6leaf-bottom-right">
-        <div class="page6content">
-          <h1 class="title">COUPON</h1>
-          <div class="coupon-content">
-            <p class="coupon-text">Silakan tukarkan kupon ini dengan nasi box special kepada pengurus SM di sekretariat.</p>
-            <p class="condition">
-              <b>Hanya berlaku</b> jika Anda mengikuti <b>SM</b> pada:<br>
-              <span class="date">29/30 November 2025</span> di Sekretariat pengadaan SM untuk rekan - rekan di Cabang Surabaya 1 (KJ)  <span class="date">Desember 2025</span> untuk rekan - rekan di Cabang Bandung 1 
-            </p>
-          </div>
-          <div class="credits">
-            <p>©Salman & Indi</p>
           </div>
         </div>
       `;
