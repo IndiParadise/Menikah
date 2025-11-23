@@ -12,7 +12,7 @@ html {
 
 /* Body - Umum untuk semua halaman */
 body {
-  background-color: #2c5538; /* Background konsisten */
+  background-color: #2c5538;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,12 +30,11 @@ body {
   max-height: 100vh;
   position: relative;
   overflow: hidden;
-  background-color: #faf9f6; /* Background dasar */
+  background-color: #faf9f6;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   transform-origin: top left;
   padding: 0;
   margin: 0;
-  /* Gaya background akan diterapkan ke masing-masing halaman */
 }
 
 @media (min-width: 376px) {
@@ -50,15 +49,15 @@ body {
 .page {
   width: 100%;
   height: 100%;
-  position: absolute; /* Semua section berada di posisi absolut */
+  position: absolute;
   top: 0;
   left: 0;
-  display: none; /* Sembunyikan secara default */
+  display: none;
   overflow: hidden;
 }
 
 .page.active {
-  display: block; /* Tampilkan hanya section yang memiliki class 'active' */
+  display: block;
 }
 
 /* STYLING ELEMEN AUDIO (Sembunyikan) */
@@ -67,7 +66,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 1 ==================== */
-/* Gaya background untuk Page 1 */
 #page1 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -78,7 +76,7 @@ audio#backgroundMusic {
 /* Animasi untuk leaf di Page 1 */
 #page1 .layer {
   position: absolute;
-  z-index: 20; /* Atur z-index sesuai kebutuhan */
+  z-index: 20;
   pointer-events: none;
   opacity: 1;
   max-width: 100%;
@@ -121,7 +119,6 @@ audio#backgroundMusic {
   animation: shrinkToBottomLeft 2s ease-in-out forwards;
 }
 
-/* Animasi untuk leaf di Page 1 */
 @keyframes shrinkToTopLeft {
   to {
     left: -3%;
@@ -158,7 +155,6 @@ audio#backgroundMusic {
   }
 }
 
-/* Container konten utama untuk Page 1 */
 #page1 .page1content {
   position: relative;
   top: 10%;
@@ -172,8 +168,8 @@ audio#backgroundMusic {
   align-items: center;
   gap: 1.8rem;
   min-height: 70%;
-  opacity: 0; /* Mulai transparan */
-  animation: fadeInContent 0.8s ease-out 2s forwards; /* Animasi muncul */
+  opacity: 0;
+  animation: fadeInContent 0.8s ease-out 2s forwards;
 }
 
 @keyframes fadeInContent {
@@ -182,10 +178,9 @@ audio#backgroundMusic {
   }
 }
 
-/* Gaya untuk judul dan teks di Page 1 */
 #page1 .page1content h1 {
   font-family: 'Courgette', cursive;
-  font-size:  11vw;
+  font-size: 11vw;
   color: #2d5a3c;
   margin: 0;
   line-height: 1.1;
@@ -224,7 +219,6 @@ audio#backgroundMusic {
   font-size: 7vw;
 }
 
-/* Gaya untuk tombol "OPEN" di Page 1 */
 #page1 .open-announcement-btn {
   position: absolute;
   bottom: 20%;
@@ -242,8 +236,8 @@ audio#backgroundMusic {
   z-index: 30;
   transition: all 0.25s ease;
   box-shadow: 0 4px 10px rgba(45, 90, 60, 0.2);
-  opacity: 0; /* Mulai transparan */
-  animation: fadeInUp 0.8s ease-out 2.8s forwards; /* Animasi muncul */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 2.8s forwards;
 }
 
 @keyframes fadeInUp {
@@ -263,7 +257,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 2 ==================== */
-/* Gaya background untuk Page 2 */
 #page2 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -271,7 +264,6 @@ audio#backgroundMusic {
   background-repeat: no-repeat;
 }
 
-/* Gaya untuk elemen dekoratif di Page 2 */
 #page2 .page2bg-flower {
   position: absolute;
   width: 30px;
@@ -279,6 +271,7 @@ audio#backgroundMusic {
   opacity: 0.3;
   animation: float 6s ease-in-out infinite;
   z-index: 5;
+  will-change: transform; /* ✅ Optimasi */
 }
 
 #page2 .page2flower-top,
@@ -309,7 +302,6 @@ audio#backgroundMusic {
   z-index: 1;
 }
 
-/* Container konten utama untuk Page 2 */
 #page2 .page2content {
   position: relative;
   top: 75px;
@@ -325,12 +317,11 @@ audio#backgroundMusic {
   min-height: 75%;
 }
 
-/* Gaya untuk tab di Page 2 */
 #page2 .tabs {
   display: flex;
   max-width: 70%;
   justify-content: center;
-  position: absolute; /* Absolute untuk posisi di atas konten */
+  position: absolute;
   top: -3px;
   left: 50%;
   transform: translateX(-50%);
@@ -343,7 +334,7 @@ audio#backgroundMusic {
   background: #e8e6e1;
   color: #4a7b5f;
   border: 1px solid #d1cec6;
-  padding: 0.7rem ;
+  padding: 0.7rem;
   font-family: 'Lora', serif;
   font-weight: 500;
   border-radius: 30px;
@@ -372,12 +363,11 @@ audio#backgroundMusic {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Gaya untuk konten tab di Page 2 */
 #page2 .tab-content {
   width: 100%;
   opacity: 0;
   position: absolute;
-  top: 5px; /* Atur posisi vertikal konten tab */
+  top: 5px;
   left: 0;
   padding: 0;
   max-height: 1500px;
@@ -398,10 +388,9 @@ audio#backgroundMusic {
   z-index: 30;
 }
 
-/* Gaya untuk kotak info di Page 2 */
 #page2 .info-box {
   background: rgba(255, 255, 255, 0.98);
-  background-image:url('Assets/flowerPage3.png');
+  background-image: url('Assets/flowerPage3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -471,7 +460,6 @@ audio#backgroundMusic {
   opacity: 1 !important;
 }
 
-/* Gaya untuk tombol navigasi di Page 2 */
 #page2 .open-announcement-btn {
   position: relative;
   bottom:-5%;
@@ -497,7 +485,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 3 ==================== */
-/* Gaya background untuk Page 3 */
 #page3 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -505,8 +492,8 @@ audio#backgroundMusic {
   background-repeat: no-repeat;
 }
 
-/* Gaya untuk elemen dekoratif di Page 3 */
-#page3 .page3flower-top,#page3 .page3flower-top2,
+#page3 .page3flower-top,
+#page3 .page3flower-top2,
 #page3 .page3flower-bottom {
   position: absolute;
   z-index: 1;
@@ -524,7 +511,8 @@ audio#backgroundMusic {
   z-index: 1;
   opacity: 0.3;
 }
-#page2 .page3flower-top2{
+
+#page3 .page3flower-top2 {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -532,6 +520,7 @@ audio#backgroundMusic {
   max-width: 800px;
   z-index: 1;
 }
+
 #page3 .page3flower-bottom {
   bottom: 0;
   left: 50%;
@@ -542,7 +531,6 @@ audio#backgroundMusic {
   opacity: 0.3;
 }
 
-/* Container konten utama untuk Page 3 */
 #page3 .page3content {
   position: relative;
   top: 18%;
@@ -558,7 +546,6 @@ audio#backgroundMusic {
   height: 60%;
 }
 
-/* Gaya untuk judul di Page 3 */
 #page3 .title {
   font-family: 'Courgette', cursive;
   font-size: 12vw;
@@ -568,7 +555,6 @@ audio#backgroundMusic {
   word-break: break-word;
 }
 
-/* Gaya untuk kotak hadiah di Page 3 */
 #page3 .gift-box {
   width: 100%;
   height: 90%;
@@ -578,10 +564,11 @@ audio#backgroundMusic {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   text-align: center;
-  opacity: 0; /* Mulai transparan untuk animasi */
+  opacity: 0;
   transition: all 0.6s ease;
   position: relative;
   z-index: 20;
+  will-change: transform; /* ✅ Optimasi */
 }
 
 #page3 .gift-box p {
@@ -597,7 +584,6 @@ audio#backgroundMusic {
   font-weight: 600;
 }
 
-/* Animasi untuk kotak hadiah di Page 3 */
 #page3 .slide-in-left {
   transform: translateX(-100%);
   opacity: 0;
@@ -614,7 +600,6 @@ audio#backgroundMusic {
   opacity: 1;
 }
 
-/* Gaya untuk tombol navigasi di Page 3 */
 #page3 .open-announcement-btn {
   position: relative;
   bottom: -23%;
@@ -639,7 +624,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 4 ==================== */
-/* Gaya background untuk Page 4 */
 #page4 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -647,7 +631,6 @@ audio#backgroundMusic {
   background-repeat: no-repeat;
 }
 
-/* Gaya untuk elemen dekoratif di Page 4 */
 #page4 .page4leaf-top-left,
 #page4 .page4leaf-bottom-right {
   position: absolute;
@@ -673,7 +656,6 @@ audio#backgroundMusic {
   z-index: 1;
 }
 
-/* Container konten utama untuk Page 4 */
 #page4 .page4content {
   position: relative;
   z-index: 10;
@@ -688,7 +670,6 @@ audio#backgroundMusic {
   min-height: 100%;
 }
 
-/* Gaya untuk judul di Page 4 */
 #page4 .title {
   font-family: 'Courgette', cursive;
   font-size: 12.5vw;
@@ -700,7 +681,6 @@ audio#backgroundMusic {
   padding: 10px 0;
 }
 
-/* Gaya untuk kotak puisi di Page 4 */
 #page4 .pantun-box {
   width: 100%;
   height: 70%;
@@ -710,10 +690,11 @@ audio#backgroundMusic {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   text-align: center;
-  opacity: 0; /* Mulai transparan untuk animasi */
+  opacity: 0;
   transition: all 0.6s ease;
   position: relative;
   z-index: 20;
+  will-change: transform; /* ✅ Optimasi */
 }
 
 #page4 .pantun-box p {
@@ -724,7 +705,6 @@ audio#backgroundMusic {
   word-wrap: break-word;
 }
 
-/* Animasi untuk kotak puisi di Page 4 */
 #page4 .slide-in-up {
   transform: translateY(50px);
   opacity: 0;
@@ -735,7 +715,6 @@ audio#backgroundMusic {
   opacity: 1;
 }
 
-/* Gaya untuk tombol navigasi di Page 4 */
 #page4 .open-announcement-btn {
   position: relative;
   top: -18%;
@@ -760,7 +739,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 5 ==================== */
-/* Gaya background untuk Page 5 */
 #page5 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -768,7 +746,6 @@ audio#backgroundMusic {
   background-repeat: no-repeat;
 }
 
-/* Gaya untuk elemen dekoratif di Page 5 */
 #page5 .page5leaf-top-right,
 #page5 .page5leaf-bottom-left {
   position: absolute;
@@ -794,7 +771,6 @@ audio#backgroundMusic {
   z-index: 1;
 }
 
-/* Container konten utama untuk Page 5 */
 #page5 .page5content {
   position: relative;
   z-index: 10;
@@ -809,7 +785,6 @@ audio#backgroundMusic {
   min-height: 100%;
 }
 
-/* Gaya untuk judul di Page 5 */
 #page5 .title {
   font-family: 'Courgette', cursive;
   font-size: 11vw;
@@ -821,7 +796,6 @@ audio#backgroundMusic {
   padding: 10px 0;
 }
 
-/* Gaya untuk subtitle di Page 5 */
 #page5 .subtitle {
   font-family: 'Lora', serif;
   color: #4a7b5f;
@@ -830,7 +804,6 @@ audio#backgroundMusic {
   line-height: 0.4;
 }
 
-/* Gaya untuk daftar kata di Page 5 */
 #page5 .words-to-find {
   display: flex;
   flex-wrap: wrap;
@@ -859,7 +832,6 @@ audio#backgroundMusic {
   transform: scale(1.03);
 }
 
-/* Gaya untuk grid puzzle di Page 5 */
 #page5 #puzzle-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -908,7 +880,6 @@ audio#backgroundMusic {
   box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
 }
 
-/* Gaya untuk pesan penyelesaian di Page 5 */
 #page5 #completion-message {
   background: rgba(250, 249, 246, 0.95);
   padding: 20px;
@@ -942,7 +913,6 @@ audio#backgroundMusic {
   line-height: 1.4;
 }
 
-/* Gaya untuk tombol klaim di Page 5 */
 #page5 #claim-button {
   position: relative;
   top: 0%;
@@ -970,7 +940,6 @@ audio#backgroundMusic {
 }
 
 /* ==================== STYLING KHUSUS UNTUK PAGE 6 ==================== */
-/* Gaya background untuk Page 6 */
 #page6 {
   background-image: url('Assets/backgroundTexture.jpg');
   background-size: cover;
@@ -978,7 +947,6 @@ audio#backgroundMusic {
   background-repeat: no-repeat;
 }
 
-/* Gaya untuk elemen dekoratif di Page 6 */
 #page6 .page6leaf-top-left,
 #page6 .page6leaf-bottom-right {
   position: absolute;
@@ -1004,7 +972,6 @@ audio#backgroundMusic {
   z-index: 1;
 }
 
-/* Container konten utama untuk Page 6 */
 #page6 .page6content {
   position: relative;
   top: 10%;
@@ -1020,7 +987,6 @@ audio#backgroundMusic {
   min-height: 70%;
 }
 
-/* Gaya untuk judul di Page 6 */
 #page6 .title {
   font-family: 'Courgette', cursive;
   font-size: 2.1rem;
@@ -1032,7 +998,6 @@ audio#backgroundMusic {
   letter-spacing: 0.5px;
 }
 
-/* Gaya untuk teks kupon di Page 6 */
 #page6 .coupon-text {
   font-size: 0.9rem;
   line-height: 1.5;
@@ -1041,7 +1006,6 @@ audio#backgroundMusic {
   color: #4a7b5f;
 }
 
-/* Gaya untuk kotak manfaat di Page 6 */
 #page6 .benefits {
   background: rgba(250, 249, 246, 0.95);
   padding: 18px;
@@ -1065,7 +1029,6 @@ audio#backgroundMusic {
   font-family: 'Lora', serif;
 }
 
-/* Gaya untuk kondisi di Page 6 */
 #page6 .condition {
   background: rgba(250, 249, 246, 0.95);
   padding: 15px;
@@ -1088,7 +1051,6 @@ audio#backgroundMusic {
   font-family: 'Lora', serif;
 }
 
-/* Gaya untuk credit di Page 6 */
 #page6 .credits {
   background: initial;
   border-top: 1px dashed rgba(45, 90, 60, 0.1);

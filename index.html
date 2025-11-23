@@ -10,7 +10,6 @@
 <body>
   <div class="mobile-container">
     <section class="page active" id="page1">
-    <!-- elements -->
      <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page1leaf-left-top">
      <img src="Assets/leafRightTopPage1.png" alt="" class="layer page1leaf-right-top">
      <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page1leaf-right-bottom">
@@ -20,20 +19,16 @@
         <h2>IDAMAN<br>(INDI & SALMAN)</h2>
         <div class="greeting">
           <span class="salutation">Yth.</span>
-          <span id="visitorName">Sahabat yang Dirahmati</span> <!-- Nilai default sementara -->
+          <span id="visitorName">Sahabat yang Dirahmati</span>
         </div>
       </div>
-
-    <!-- Navigation Button -->
-     <button class="open-announcement-btn" id="openBtn" onclick="goToPage(2)">OPEN</button> <!-- Tambahkan ID -->
+     <button class="open-announcement-btn" id="openBtn" onclick="goToPage(2)">OPEN</button>
     </section>
-    <section class="page active" id="page2">
-      <!-- elements -->
-      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 10%; left: 10%;"> <!-- Batch 6, Image 26 -->
-      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 80%; right: 15%;"> <!-- Batch 7, Image 32 -->
+    <section class="page" id="page2">
+      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 10%; left: 10%;">
+      <img src="Assets/flowerPage3.png" alt="Small Flower" class="page2bg-flower" style="top: 80%; right: 15%;">
       <img src="Assets/flowerTopPage2.png" alt="" class="layer page2flower-top">
       <img src="Assets/flowerBottomPage2.png" alt="" class="layer page2flower-bottom">
-
       <div class="page2content">
         <div class="tabs">
             <button class="tab-btn active" data-tab="bride-groom">Bride & Groom</button>
@@ -61,7 +56,7 @@
     </div>
     <button class="open-announcement-btn" onclick="goToPage(3)" style="display: block !important; opacity: 1 !important; z-index: 999 !important;">GIFT</button>  
     </section>
-    <section class="page active" id="page3">
+    <section class="page" id="page3">
         <img src="Assets/flowersideLeftPage3.png" alt="" class="layer page3flower-top">
         <img src="Assets/flowersideRightPage3.png" alt="" class="layer page3flower-bottom">
         <img src="Assets/flowerTopPage3.png" alt="" class="layer page3flower-top2" >
@@ -80,15 +75,11 @@
         </div>
         <button class="open-announcement-btn" onclick="goToPage(4)">POETRY</button>
     </section>
-    <section class="page active" id="page4">
-      <!-- Large background leaves -->
+    <section class="page" id="page4">
       <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page4leaf-top-left">
       <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page4leaf-bottom-right">
-
       <div class="page4content">
         <h1 class="title">IDAMAN</h1>
-
-        <!-- Pantun Content Box -->
         <div class="pantun-box slide-in-up" id="pantunBox">
           <p>Isinya Indi dan Salman</p>
           <p>Semoga menjadi keberkahan</p>
@@ -99,17 +90,13 @@
         </div>
     </div>
         <button class="open-announcement-btn" onclick="goToPage(5)">GAME</button>
-      
     </section>
-    <section class="page active" id="page5">
-      <!-- Large background leaves -->
+    <section class="page" id="page5">
       <img src="Assets/leafRightTopPage1.png" alt="" class="layer page5leaf-top-right">
       <img src="Assets/leafLeftBottomPage1.png" alt="" class="layer page5leaf-bottom-left">
-
       <div class="page5content">
         <h1 class="title">PUZZLE<br>WORDS</h1>
         <p class="subtitle">find our special words</p>
-
         <div class="words-to-find" id="words-to-find">
           <span class="word-item">INDI</span>
           <span class="word-item">SALMAN</span>
@@ -117,25 +104,19 @@
           <span class="word-item">PEJUANG</span>
           <span class="word-item">PMT</span>
         </div>
-
         <div id="puzzle-grid"></div>
-
         <div id="completion-message" class="hidden">
           <h2 class="completion-title">Congratulation 🎉</h2>
           <p class="completion-text">you found all of our special words</p>
           <button id="claim-button">CLAIM CUPON</button>
         </div>
-        
       </div>
     </section>
-    <section class="page active" id="page6">
-      <!-- Large background leaves -->
+    <section class="page" id="page6">
       <img src="Assets/leafLeftTopPage1.png" alt="" class="layer page6leaf-top-left">
       <img src="Assets/leafRightBottomPage1.png" alt="" class="layer page6leaf-bottom-right">
-
       <div class="page6content">
-        <h1 class="title">CUPON</h1>
-
+        <h1 class="title">COUPON</h1>
         <div class="coupon-content">
           <p class="coupon-text">Silakan tukarkan kupon ini dengan nasi box special kepada pengurus SM di sekretariat.</p>
           <p class="condition">
@@ -143,17 +124,16 @@
             <span class="date">29/30 November 2025</span> di Sekretariat pengadaan SM untuk rekan - rekan di Cabang Surabaya 1 (KJ)  <span class="date">Desember 2025</span> untuk rekan - rekan di Cabang Bandung 1 
           </p>
         </div>
-
         <div class="credits ">
           <p>©Salman & Indi</p>
         </div>
       </div>
     </section>
   </div>
-   <audio id="backgroundMusic" loop>
+   <audio id="backgroundMusic" loop preload="auto">
     <source src="Assets/weddingSong.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
   <script src="main.js"></script>
   </body>
-  </html>
+</html>
