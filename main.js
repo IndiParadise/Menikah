@@ -473,13 +473,6 @@ function initializePuzzlePage5() {
           completionMsg.classList.remove('hidden');
         }
 
-        // Event listener untuk tombol CLAIM CUPON
-        const claimButton = document.getElementById('claim-button');
-        if (claimButton) {
-          claimButton.addEventListener('click', () => {
-              goToPage(6);
-          });
-        }
     }
 
     // Inisialisasi
